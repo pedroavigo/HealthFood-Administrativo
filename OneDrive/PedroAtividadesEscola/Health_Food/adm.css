@@ -1,0 +1,129 @@
+
+:root { /* Define as cores utilizadas no projeto. */
+    --verde: #16734c; /* Verde principal da empresa. */
+    --verde-escuro: #10583b; /* Verde utilizado em destaques. */
+    --verde-claro: #e5f5eb; /* Verde suave dos elementos. */
+    --fundo: #f5f8f6; /* Fundo da área administrativa. */
+    --branco: #ffffff; /* Cor de cartões e painéis. */
+    --texto: #20352c; /* Cor principal dos textos. */
+    --cinza: #7b8d83; /* Cor dos textos auxiliares. */
+    --borda: #e5ece7; /* Cor das linhas e bordas. */
+    --vermelho: #d45b59; /* Cor de exclusões e alertas. */
+} /* Finaliza a paleta de cores. */
+
+* { box-sizing: border-box; } /* Inclui bordas e preenchimentos no tamanho dos elementos. */
+body { margin: 0; background: var(--fundo); color: var(--texto); font-family: Arial, Helvetica, sans-serif; } /* Configura o estilo geral. */
+button, input, select { font: inherit; } /* Padroniza a fonte dos campos e botões. */
+button { cursor: pointer; } /* Exibe o cursor de clique. */
+
+.sidebar { /* Configura o menu lateral. */
+    position: fixed; /* Mantém o menu fixo. */
+    top: 0; /* Alinha o menu ao topo. */
+    left: 0; /* Alinha à esquerda. */
+    width: 260px; /* Define a largura. */
+    height: 100vh; /* Ocupa a altura da tela. */
+    background: var(--branco); /* Aplica fundo branco. */
+    border-right: 1px solid var(--borda); /* Adiciona linha divisória. */
+    padding: 24px 16px; /* Cria espaçamento interno. */
+    display: flex; /* Ativa o posicionamento flexível. */
+    flex-direction: column; /* Organiza os elementos verticalmente. */
+    z-index: 10; /* Mantém o menu acima dos outros elementos. */
+} /* Finaliza o menu lateral. */
+
+.logo { text-align: center; padding: 12px 8px 25px; border-bottom: 1px solid var(--borda); } /* Configura a área da marca. */
+.logo img { width: 100%; max-width: 180px; height: 125px; object-fit: contain; } /* Ajusta a logomarca sem deformá-la. */
+.logo p { margin: 5px 0 0; color: var(--verde); font-size: 12px; font-weight: bold; } /* Estiliza o texto administrativo. */
+.menu { display: flex; flex-direction: column; gap: 7px; padding-top: 28px; } /* Organiza as opções do menu. */
+.menu-btn { width: 100%; text-align: left; border: none; background: transparent; color: #65766c; padding: 15px 13px; border-radius: 10px; font-size: 13px; font-weight: 600; } /* Formata os botões de navegação. */
+.menu-btn:hover { background: #f0f7f2; color: var(--verde); } /* Destaca os botões ao passar o mouse. */
+.menu-btn.ativo { background: var(--verde-claro); color: var(--verde); } /* Destaca a página atual. */
+.usuario { margin-top: auto; display: flex; align-items: center; gap: 10px; padding-top: 18px; border-top: 1px solid var(--borda); } /* Cria a identificação administrativa. */
+.usuario strong { display: block; font-size: 12px; } /* Formata o nome da equipe. */
+.usuario small { display: block; font-size: 11px; color: var(--cinza); margin-top: 4px; } /* Formata a função da equipe. */
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--verde-claro); color: var(--verde); display: grid; place-items: center; font-weight: bold; flex-shrink: 0; } /* Estiliza o avatar. */
+
+.conteudo { margin-left: 260px; padding: 35px 40px; min-height: 100vh; } /* Define o conteúdo principal. */
+.cabecalho { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 30px; } /* Organiza o cabeçalho. */
+.cabecalho h1 { font-size: 28px; margin: 0 0 7px; } /* Formata o título da página. */
+.cabecalho p { margin: 0; color: var(--cinza); font-size: 13px; } /* Formata a descrição superior. */
+.selo { background: var(--verde-claro); color: var(--verde); padding: 10px 14px; border-radius: 30px; font-size: 11px; font-weight: bold; } /* Cria o selo de demonstração. */
+.pagina { display: none; } /* Esconde as páginas não selecionadas. */
+.pagina.ativa { display: block; } /* Exibe a página selecionada. */
+
+.boas-vindas { /* Formata a apresentação do painel. */
+    padding: 32px; /* Define o espaçamento interno. */
+    border-radius: 18px; /* Arredonda os cantos. */
+    color: white; /* Define a cor dos textos. */
+    background: linear-gradient(110deg, #105b3a, #29a36a); /* Cria o fundo verde em degradê. */
+    margin-bottom: 25px; /* Adiciona espaço abaixo. */
+} /* Finaliza a apresentação. */
+.boas-vindas span { color: #c4efd5; font-size: 10px; font-weight: bold; letter-spacing: 2px; } /* Formata a identificação superior. */
+.boas-vindas h2 { font-size: 25px; margin: 12px 0; } /* Formata a mensagem de boas-vindas. */
+.boas-vindas p { font-size: 13px; color: #e1f5e8; margin: 0; } /* Formata o texto explicativo. */
+
+.indicadores { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 17px; margin-bottom: 24px; } /* Organiza os indicadores em quatro colunas. */
+.indicador { background: white; padding: 23px; border: 1px solid var(--borda); border-radius: 15px; box-shadow: 0 3px 15px #1539200b; min-width: 0; } /* Estiliza os indicadores. */
+.indicador p { margin: 0 0 15px; color: var(--cinza); font-size: 12px; } /* Formata o nome de cada indicador. */
+.indicador h2 { margin: 0 0 9px; color: var(--verde-escuro); font-size: 25px; overflow-wrap: anywhere; } /* Destaca os valores. */
+.indicador small { color: #98a99e; font-size: 11px; } /* Formata as descrições menores. */
+.indicadores-financeiros { grid-template-columns: repeat(3, minmax(0, 1fr)); } /* Ajusta os indicadores financeiros. */
+.duas-colunas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } /* Divide o resumo em duas colunas. */
+.cartao { background: white; border: 1px solid var(--borda); border-radius: 15px; padding: 25px; margin-bottom: 22px; box-shadow: 0 3px 15px #1539200b; min-width: 0; } /* Cria o estilo dos cartões principais. */
+.cartao h3 { margin: 0 0 22px; font-size: 17px; } /* Formata os títulos dos cartões. */
+.texto-suave { color: var(--cinza); font-size: 12px; } /* Formata textos secundários. */
+.saldo { color: var(--verde); font-size: 35px; margin: 22px 0; } /* Destaca o resultado financeiro. */
+.barra-financeira { width: 100%; height: 12px; border-radius: 20px; overflow: hidden; background: #e9eee9; display: flex; margin-top: 25px; } /* Cria a barra financeira. */
+#barra-receitas { width: 0%; background: #29a36a; } /* Define a parte de receitas da barra. */
+#barra-despesas { width: 0%; background: #ed9879; } /* Define a parte de despesas da barra. */
+.legenda { margin: 15px 0 0; color: var(--cinza); font-size: 12px; } /* Formata a legenda da barra. */
+.linha-resumo { display: flex; justify-content: space-between; gap: 10px; padding: 15px 0; border-bottom: 1px solid var(--borda); font-size: 13px; } /* Organiza cada linha do resumo operacional. */
+.linha-resumo:last-child { border-bottom: none; } /* Remove a borda da última linha. */
+.linha-resumo strong { color: var(--verde); } /* Destaca os totais. */
+
+.titulo-secao { margin-bottom: 25px; } /* Separa os títulos do conteúdo. */
+.titulo-secao h2 { margin: 0 0 9px; font-size: 24px; } /* Formata o nome da seção. */
+.titulo-secao p { margin: 0; color: var(--cinza); font-size: 13px; } /* Formata a descrição da seção. */
+.formulario { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; } /* Organiza os formulários em duas colunas. */
+input, select { width: 100%; padding: 13px; border: 1px solid #dfe8e1; border-radius: 9px; background: white; color: var(--texto); outline: none; font-size: 13px; } /* Formata os campos de entrada. */
+input:focus, select:focus { border-color: var(--verde); box-shadow: 0 0 0 3px #16734c18; } /* Destaca o campo selecionado. */
+.botao-verde { background: var(--verde); color: white; border: none; border-radius: 9px; padding: 13px 20px; font-size: 13px; font-weight: bold; } /* Formata o botão de salvar. */
+.botao-verde:hover { background: var(--verde-escuro); } /* Escurece o botão quando o mouse passa sobre ele. */
+.botao-claro { background: #eff8f1; color: var(--verde); border: 1px solid #d8e9dc; border-radius: 9px; padding: 10px 15px; font-size: 12px; font-weight: bold; } /* Formata o botão de exportação. */
+.titulo-tabela { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 20px; } /* Organiza o título e o botão da tabela. */
+.titulo-tabela h3 { margin: 0; } /* Remove margens extras do título. */
+.tabela-rolagem { overflow-x: auto; width: 100%; } /* Permite visualizar tabelas maiores em telas pequenas. */
+table { width: 100%; border-collapse: collapse; text-align: left; } /* Define o formato geral da tabela. */
+th { background: #f7faf8; color: #718779; padding: 15px; font-size: 11px; white-space: nowrap; } /* Formata os cabeçalhos das tabelas. */
+td { padding: 15px; font-size: 12px; border-bottom: 1px solid var(--borda); } /* Formata os dados das tabelas. */
+tr:last-child td { border-bottom: none; } /* Remove a última linha divisória. */
+.etiqueta { display: inline-block; padding: 6px 10px; border-radius: 20px; background: #e6f6ec; color: #16804b; font-size: 11px; font-weight: bold; } /* Cria os indicadores de situação. */
+.etiqueta.atencao { background: #fff2dd; color: #a77412; } /* Destaca situações que exigem atenção. */
+.etiqueta.perigo { background: #ffeaea; color: #be4949; } /* Destaca situações negativas. */
+.botao-acao { padding: 7px 10px; border-radius: 7px; border: 1px solid #d9e8df; background: white; color: var(--verde); margin: 2px; font-size: 11px; } /* Formata botões de edição. */
+.botao-acao.excluir { color: var(--vermelho); border-color: #f0d6d6; } /* Formata botões de exclusão. */
+.botao-acao:hover { background: #f2f8f4; } /* Destaca os botões das tabelas. */
+.aviso { padding: 14px; border-radius: 8px; background: #f4f8ed; color: #64785a; font-size: 12px; margin-top: 20px; } /* Estiliza o aviso sobre segurança alimentar. */
+footer { margin-top: 35px; text-align: center; color: #98a89e; font-size: 11px; } /* Formata o rodapé. */
+
+@media (max-width: 1100px) { /* Adapta o site para telas médias. */
+    .indicadores { grid-template-columns: repeat(2, minmax(0, 1fr)); } /* Mostra dois indicadores por linha. */
+    .duas-colunas { grid-template-columns: 1fr; } /* Empilha os cartões inferiores. */
+} /* Encerra as regras de telas médias. */
+
+@media (max-width: 750px) { /* Adapta o site para celulares. */
+    .sidebar { position: relative; width: 100%; height: auto; padding: 16px; } /* Transforma o menu fixo em menu superior. */
+    .logo img { height: 85px; } /* Reduz a imagem em telas pequenas. */
+    .usuario { display: none; } /* Oculta o perfil lateral. */
+    .menu { display: flex; flex-direction: row; overflow-x: auto; padding-top: 15px; } /* Permite rolar o menu horizontalmente. */
+    .menu-btn { white-space: nowrap; width: auto; } /* Impede que os nomes dos botões quebrem. */
+    .conteudo { margin-left: 0; padding: 22px 15px; } /* Aproveita a largura do celular. */
+    .cabecalho h1 { font-size: 22px; } /* Reduz o tamanho do título. */
+    .selo { display: none; } /* Esconde o selo no celular. */
+    .boas-vindas { padding: 24px; } /* Ajusta o cartão principal. */
+    .boas-vindas h2 { font-size: 21px; } /* Ajusta o título de boas-vindas. */
+    .indicador { padding: 16px; } /* Reduz o espaçamento dos indicadores. */
+    .indicador h2 { font-size: 19px; } /* Ajusta os valores monetários. */
+    .indicadores-financeiros { grid-template-columns: 1fr; } /* Empilha os indicadores financeiros. */
+    .formulario { grid-template-columns: 1fr; } /* Mostra os campos em uma coluna. */
+    .cartao { padding: 18px; } /* Reduz o espaçamento dos cartões. */
+} /* Finaliza a versão para celulares. */
